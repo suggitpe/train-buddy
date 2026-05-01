@@ -10,8 +10,8 @@ This plan focuses on creating a "walking skeleton" of the application. The goal 
 
 ## Phase 2: "Hello World" End-to-End Connection
 - [x] Task: Implement a placeholder function for the train API client. [2c5c353]
-    - [ ] Task: Write a failing test for the placeholder client that confirms it returns a hardcoded, sample train data structure.
-    - [ ] Task: Implement the placeholder client to return the hardcoded data, making the test pass.
+    - [x] Task: Write a failing test for the placeholder client that confirms it returns a hardcoded, sample train data structure. [2c5c353]
+    - [x] Task: Implement the placeholder client to return the hardcoded data, making the test pass. [2c5c353]
 - [ ] Task: Implement a placeholder function for the Telegram bot.
     - [ ] Task: Write a failing test for the placeholder bot that confirms it "sends" a message (e.g., appends it to a list in memory).
     - [ ] Task: Implement the placeholder bot to make the test pass.

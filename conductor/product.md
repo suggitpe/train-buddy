@@ -24,4 +24,4 @@ This project is for any commuter who is comfortable with basic technical setup (
 ## 4. Platform & Interaction
 
 *   **Hardware:** The agent is designed to run on a modern, low-power computer like a Raspberry Pi (Model 4, 5, or Zero 2 W) with an internet connection.
-*   **Communication:** All communication will be handled through the Telegram messaging platform.
+*   **Communication:** All communication will be handled through the Telegram messaging platform. The bot can be used either in a private, one-on-one chat or in a small group chat with friends sharing the same commute.

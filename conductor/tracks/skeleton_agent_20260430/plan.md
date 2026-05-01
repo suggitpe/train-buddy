@@ -15,11 +15,11 @@ This plan focuses on creating a "walking skeleton" of the application. The goal 
 - [x] Task: Implement a placeholder function for the Telegram bot. [8343e8f]
     - [x] Task: Write a failing test for the placeholder bot that confirms it "sends" a message (e.g., appends it to a list in memory). [8343e8f]
     - [x] Task: Implement the placeholder bot to make the test pass. [8343e8f]
-- [~] Task: Create the main application loop in `main.py`.
-    - [ ] Task: The loop should:
-        1. Load the configuration.
-        2. Call the placeholder train API function.
-        3. Based on the dummy data, call the placeholder Telegram function with a "Hello World" style message.
+- [x] Task: Create the main application loop in `main.py`. [aae991b]
+    - [x] Task: The loop should: [aae991b]
+        1. Load the configuration. [aae991b]
+        2. Call the placeholder train API function. [aae991b]
+        3. Based on the dummy data, call the placeholder Telegram function with a "Hello World" style message. [aae991b]
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: "Hello World" End-to-End Connection' (Protocol in workflow.md)
 
 ## Phase 3: Live Integration

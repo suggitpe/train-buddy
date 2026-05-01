@@ -3,7 +3,7 @@
 This plan focuses on creating a "walking skeleton" of the application. The goal is to have a minimal, but fully connected, system running that can be incrementally improved upon.
 
 ## Phase 1: Basic Structure and Configuration
-- [ ] Task: Create the basic Python application structure (`main.py`, `config.py`, `requirements.txt`).
+- [~] Task: Create the basic Python application structure (`main.py`, `config.py`, `requirements.txt`).
 - [ ] Task: Implement a configuration module (`config.py`) that loads a `config.yaml.example` file with placeholder values for API keys and a single dummy train service.
 - [ ] Task: Create a `requirements.txt` file with `requests` and `python-telegram-bot`.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Basic Structure and Configuration' (Protocol in workflow.md)

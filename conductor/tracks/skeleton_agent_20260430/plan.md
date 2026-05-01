@@ -9,7 +9,7 @@ This plan focuses on creating a "walking skeleton" of the application. The goal 
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Basic Structure and Configuration' (Protocol in workflow.md) [checkpoint: fe673b9]
 
 ## Phase 2: "Hello World" End-to-End Connection
-- [ ] Task: Implement a placeholder function for the train API client.
+- [~] Task: Implement a placeholder function for the train API client.
     - [ ] Task: Write a failing test for the placeholder client that confirms it returns a hardcoded, sample train data structure.
     - [ ] Task: Implement the placeholder client to return the hardcoded data, making the test pass.
 - [ ] Task: Implement a placeholder function for the Telegram bot.

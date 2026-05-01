@@ -2,11 +2,11 @@
 
 This plan focuses on creating a "walking skeleton" of the application. The goal is to have a minimal, but fully connected, system running that can be incrementally improved upon.
 
-## Phase 1: Basic Structure and Configuration
-- [~] Task: Create the basic Python application structure (`main.py`, `config.py`, `requirements.txt`).
-- [ ] Task: Implement a configuration module (`config.py`) that loads a `config.yaml.example` file with placeholder values for API keys and a single dummy train service.
-- [ ] Task: Create a `requirements.txt` file with `requests` and `python-telegram-bot`.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Basic Structure and Configuration' (Protocol in workflow.md)
+## Phase 1: Basic Structure and Configuration [checkpoint: fe673b9]
+- [x] Task: Create the basic Python application structure (`main.py`, `config.py`, `requirements.txt`). [d17176f]
+- [x] Task: Implement a configuration module (`config.py`) that loads a `config.yaml.example` file with placeholder values for API keys and a single dummy train service. [d17176f]
+- [x] Task: Create a `requirements.txt` file with `requests` and `python-telegram-bot`. [d17176f]
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Basic Structure and Configuration' (Protocol in workflow.md) [checkpoint: fe673b9]
 
 ## Phase 2: "Hello World" End-to-End Connection
 - [ ] Task: Implement a placeholder function for the train API client.

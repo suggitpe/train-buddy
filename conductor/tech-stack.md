@@ -8,6 +8,7 @@ This document outlines the technology stack for the Personal Train Buddy project
 
 ## 2. Core Libraries
 
+*   **google-generativeai:** The official Python SDK for the Google AI API, used to power the agent's core reasoning and language understanding with Gemini models.
 *   **Requests:** This library will be used for making all HTTP requests to the real-time train data APIs.
 *   **python-telegram-bot:** This will be used to handle all interactions with the Telegram Bot API, including sending alerts and receiving user commands.
 *   **APScheduler (Advanced Python Scheduler):** This library will be integrated into the application to manage the scheduling of recurring tasks, such as the periodic checks for train statuses.

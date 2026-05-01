@@ -15,62 +15,65 @@ All tasks follow a strict lifecycle:
 
 ### Standard Task Workflow
 
-1. **Select Task:** Choose the next available task from `plan.md` in sequential order
+**This workflow is turn-based and requires human intervention for commits.**
 
-2. **Mark In Progress:** Before beginning work, edit `plan.md` and change the task from `[ ]` to `[~]`
+---
+#### **Part 1: AI - Code Implementation**
+*(This part is performed by the AI agent)*
 
-3. **Write Failing Tests (Red Phase):**
-   - Create a new test file for the feature or bug fix.
-   - Write one or more unit tests that clearly define the expected behavior and acceptance criteria for the task.
-   - **CRITICAL:** Run the tests and confirm that they fail as expected. This is the "Red" phase of TDD. Do not proceed until you have failing tests.
+1.  **Select Task:** Choose the next available task from `plan.md` in sequential order.
 
-4. **Implement to Pass Tests (Green Phase):**
-   - Write the minimum amount of application code necessary to make the failing tests pass.
-   - Run the test suite again and confirm that all tests now pass. This is the "Green" phase.
+2.  **Mark In Progress:** Before beginning work, edit `plan.md` and change the task from `[ ]` to `[~]`.
 
-5. **Refactor (Optional but Recommended):**
-   - With the safety of passing tests, refactor the implementation code and the test code to improve clarity, remove duplication, and enhance performance without changing the external behavior.
-   - Rerun tests to ensure they still pass after refactoring.
+3.  **Write Failing Tests (Red Phase):**
+    -   Create a new test file for the feature or bug fix.
+    -   Write one or more unit tests that clearly define the expected behavior.
+    -   **CRITICAL:** Run the tests and confirm that they fail as expected.
 
-6. **Verify Coverage:** Run coverage reports using the project's chosen tools. For example, in a Python project, this might look like:
-   ```bash
-   pytest --cov=app --cov-report=html
-   ```
-   Target: >80% coverage for new code. The specific tools and commands will vary by language and framework.
+4.  **Implement to Pass Tests (Green Phase):**
+    -   Write the minimum amount of application code necessary to make the failing tests pass.
+    -   Run the test suite again and confirm that all tests now pass.
 
-7. **Document Deviations:** If implementation differs from tech stack:
-   - **STOP** implementation
-   - Update `tech-stack.md` with new design
-   - Add dated note explaining the change
-   - Resume implementation
+5.  **Refactor (Optional):** Refactor the implementation and test code to improve clarity and performance.
 
-8. **Commit Code Changes:**
-   - Stage all code changes related to the task.
-   - Propose a clear, concise commit message e.g, `feat(ui): Create basic HTML structure for calculator`.
-   - Perform the commit.
+6.  **Verify Quality Gates:** Run all checks (coverage, linting, etc.) as defined in the "Quality Gates" section.
 
-9. **Task Review and Confirmation:**
-   - **Announce Completion:** Announce that the task implementation is complete and has been committed.
-   - **Show Changes:** Present the user with the `git show` output for the commit just made, so they can see the diff.
-   - **Request Approval:** Ask for explicit user approval to proceed using `ask_user` with a simple Yes/No question like "Do you approve these changes for task '<Task Name>'?".
-   - **Handle Rejection:** If the user disapproves, halt the process and ask for feedback on what to change.
+7.  **Prepare for Handoff:**
+    -   Stage all relevant file changes using `git add`.
+    -   Display the staged changes to the user with `git diff --staged`.
+    -   Generate and propose a descriptive commit message according to the project's commit guidelines.
 
-10. **Attach Task Summary with Git Notes:**
-    - **Step 10.1: Get Commit Hash:** Obtain the hash of the *just-completed commit* (`git log -1 --format="%H"`).
-    - **Step 10.2: Draft Note Content:** Create a detailed summary for the completed task. This should include the task name, a summary of changes, a list of all created/modified files, and the core "why" for the change.
-    - **Step 10.3: Attach Note:** Use the `git notes` command to attach the summary to the commit.
-      ```bash
-      # The note content from the previous step is passed via the -m flag.
-      git notes add -m "<note content>" <commit_hash>
-      ```
+8.  **Handoff to Human for Commit:**
+    -   The AI will now stop and instruct the user to perform the commit.
+    -   **Instruction to User:** "The code for task '<Task Name>' is complete and staged. Please review the diff above. If you approve, run the following command to commit the changes:"
+        ```bash
+        git commit -m "..."
+        ```
+    - The AI's turn ends.
 
-11. **Get and Record Task Commit SHA:**
-    - **Step 11.1: Update Plan:** Read `plan.md`, find the line for the completed task, update its status from `[~]` to `[x]`, and append the first 7 characters of the *just-completed commit's* commit hash.
-    - **Step 11.2: Write Plan:** Write the updated content back to `plan.md`.
+---
+#### **Part 2: Human & AI - Bookkeeping**
+*(This part begins on the AI's next turn, after the human has committed)*
 
-12. **Commit Plan Update:**
-    - **Action:** Stage the modified `plan.md` file.
-    - **Action:** Commit this change with a descriptive message (e.g., `conductor(plan): Mark task 'Create user model' as complete`).
+9.  **AI: Reconcile State:**
+    -   The AI's first action is to retrieve the SHA of the commit the user just made by running `git log -1 --format="%H"`.
+
+10. **AI: Attach Task Summary & Update Plan:**
+    -   The AI will draft a summary and attach it to the retrieved commit SHA using `git notes add`.
+    -   The AI will then update the `plan.md` file, marking the task as complete `[x]` and appending the commit SHA.
+
+11. **AI: Prepare for `plan.md` Commit:**
+    -   The AI stages the updated `plan.md` file.
+    -   The AI displays the diff for `plan.md`.
+    -   The AI proposes the commit message: `conductor(plan): Mark task '...' as complete`.
+
+12. **Handoff to Human for `plan.md` Commit:**
+    -   The AI hands off to the user to commit the plan update.
+    -   **Instruction to User:** "The plan has been updated. Please run the following command to commit the change:"
+        ```bash
+        git commit -m "conductor(plan): Mark task '...' as complete"
+        ```
+    - The AI's turn ends, and the cycle can begin again.
 
 ### Phase Completion Verification and Checkpointing Protocol
 

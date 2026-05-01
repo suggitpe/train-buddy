@@ -1,0 +1,5 @@
+google-generativeai
+requests
+python-telegram-bot
+APScheduler
+PyYAML

@@ -1,0 +1,23 @@
+# Telegram Bot API Token
+telegram_token: "YOUR_TELEGRAM_BOT_TOKEN"
+
+# Google AI API Key for Gemini
+google_api_key: "YOUR_GOOGLE_AI_API_KEY"
+
+# Real-time Train Data API (National Rail OpenLDBWS)
+# Get a token from the National Rail Enquiries portal
+train_api:
+  token: "YOUR_NATIONAL_RAIL_API_TOKEN"
+
+# User-specific settings
+user_settings:
+  home_station_crs: "KET" # Example: Kettering
+  work_station_crs: "STP" # Example: St Pancras
+  # Define regular train services to monitor
+  trains:
+    - name: "Morning Commute"
+      service_uid: "C12345"
+      days: [ "Mon", "Tue", "Wed", "Thu", "Fri" ]
+    - name: "Evening Commute"
+      service_uid: "C67890"
+      days: [ "Mon", "Tue", "Wed", "Thu" ]

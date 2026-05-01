@@ -155,6 +155,7 @@ Before marking any task complete, verify:
 - [ ] No linting or static analysis errors (using the project's configured tools)
 - [ ] Works correctly on mobile (if applicable)
 - [ ] Documentation updated if needed
+- [ ] Secrets management is handled (e.g., sensitive keys are loaded from an ignored config file).
 - [ ] No security vulnerabilities introduced
 
 ## Development Commands

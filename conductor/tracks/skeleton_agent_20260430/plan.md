@@ -15,7 +15,7 @@ This plan focuses on creating a "walking skeleton" of the application. The goal 
 - [x] Task: Implement a placeholder function for the Telegram bot. [8343e8f]
     - [x] Task: Write a failing test for the placeholder bot that confirms it "sends" a message (e.g., appends it to a list in memory). [8343e8f]
     - [x] Task: Implement the placeholder bot to make the test pass. [8343e8f]
-- [ ] Task: Create the main application loop in `main.py`.
+- [~] Task: Create the main application loop in `main.py`.
     - [ ] Task: The loop should:
         1. Load the configuration.
         2. Call the placeholder train API function.
